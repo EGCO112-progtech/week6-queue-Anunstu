@@ -25,6 +25,10 @@ int main(int argc , char **argv) {
             {
               printf("dequeing %d\n",x);
             }
+            else
+            {
+              q.size=0;
+            }
         }
         else {
        enqueue_struct(&q, atoi(argv[i]));
