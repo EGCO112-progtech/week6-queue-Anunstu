@@ -30,8 +30,9 @@ int dequeue_struct(Queue *q){
    if(t){
    int value= t->data;
    q->headPtr=t->nextPtr;
-   if(q->headPtr==NULL)
+   if(q->size==1)
    {
+    q->headPtr=NULL;
     q->tailPtr=NULL;
    }
    q->size--;
@@ -39,6 +40,7 @@ int dequeue_struct(Queue *q){
    return value;
    }
    printf("Empty queue\n");
+   q->size--;
    return 0;
 }
 
